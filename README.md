@@ -1,4 +1,4 @@
-This is an analyzer for [Cortex](https://github.com/CERT-BDF/Cortex/blob/master/README.md). It will do IP address lookups against the packetmail.net (Punch++) IP reputation service.
+This is an analyzer for [Cortex](https://github.com/CERT-BDF/Cortex/blob/master/README.md). It will do IP address lookups against the Shadowserver BGP-IP Lookup service.
 
 To install, place these files in a new directory (such as "ASNLookup") under your Cortex Analyzers directory.
 
@@ -13,9 +13,8 @@ analyzer {
 
   # Analyzer configuration
   config {
-    # Cortex-IPrep: this analyzer needs your API key for Packetmail.net
+    # ASNLookup: this analyzer needs your API key for Packetmail.net
     ASNLookup {
-      key = "YOUR_PACKETMAIL_API_KEY"
     }
     
 ...
