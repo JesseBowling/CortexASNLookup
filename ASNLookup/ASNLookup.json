@@ -12,5 +12,5 @@
     },
     "description": "Lookup the ASN, prefix, CC, and network names for an IP against the Shadowserver IP-BGP service",
     "dataTypeList": ["ip"],
-    "command": "ASNLookup/ASNLookup.py"
+    "command": "ASNLookup/asnlookup.py"
 }
