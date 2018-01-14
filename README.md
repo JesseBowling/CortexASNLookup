@@ -13,7 +13,7 @@ analyzer {
 
   # Analyzer configuration
   config {
-    # ASNLookup: this analyzer needs your API key for Packetmail.net
+    # ASNLookup: this analyzer needs no additional config
     ASNLookup {
     }
     
