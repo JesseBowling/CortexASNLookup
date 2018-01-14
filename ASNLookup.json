@@ -1,0 +1,16 @@
+{
+    "name": "ASNLookup",
+    "version": "1.0",
+    "author": "Jesse Bowling",
+    "url": "https://github.com/JesseBowling",
+    "license": "AGPL-V3",
+    "baseConfig": "ASNLookup",
+    "config": {
+      "check_tlp": false,
+      "max_tlp":3,
+      "service":""
+    },
+    "description": "Lookup the ASN, prefix, CC, and network names for an IP against the Shadowserver IP-BGP service",
+    "dataTypeList": ["ip"],
+    "command": "ASNLookup/ASNLookup.py"
+}
