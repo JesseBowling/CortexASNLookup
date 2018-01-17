@@ -1,2 +1,2 @@
 requests
-RashlyOutlaid
+RashlyOutlaid >= 0.11.1
