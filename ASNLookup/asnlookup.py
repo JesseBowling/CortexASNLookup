@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 # encoding: utf-8
+
+"""
+A Cortex Analyzer that retrieves ASN, prefix, and network names for IP addresses using Shadowserver.org's
+IP-BGP service https://shadowserver.org/wiki/pmwiki.php/Services/IP-BGP
+"""
+
 from RashlyOutlaid.libwhois import ASNWhois
 from cortexutils.analyzer import Analyzer
 
@@ -15,8 +21,16 @@ class ASNLookup(Analyzer):
         """
         'raw' is the json that's returned in the report
         """
+        taxonomies = [ ]
+        level = "info"
+        namespace = "ASNLookup"
+        asname = raw['IP-BGP']['asn']
+        isp = raw['IP-BGP']['isp']
+        predicate = "AS"
+        value = "{0} - {1}".format(asname,isp)
+        taxonomies.append(self.build_taxonomy(level, namespace, predicate, value))
 
-        return dict(network=raw['BGP-IP']['isp'])
+        return {"taxonomies": taxonomies}
 
     def search_bgpip(self, ip):
 
@@ -43,7 +57,7 @@ class ASNLookup(Analyzer):
 
                 ## This gets put back to the summary report object
                 self.report({
-                    'BGP-IP': bgpip
+                    'IP-BGP': bgpip
                 })
 
             except ValueError as e:
