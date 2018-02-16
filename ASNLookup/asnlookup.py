@@ -24,8 +24,8 @@ class ASNLookup(Analyzer):
         taxonomies = [ ]
         level = "info"
         namespace = "ASNLookup"
-        asname = raw['IP-BGP']['asn']
-        isp = raw['IP-BGP']['isp']
+        asname = raw[ 'IPBGP' ][ 'asn' ]
+        isp = raw[ 'IPBGP' ][ 'isp' ]
         predicate = "AS"
         value = "{0} - {1}".format(asname,isp)
         taxonomies.append(self.build_taxonomy(level, namespace, predicate, value))
@@ -57,7 +57,7 @@ class ASNLookup(Analyzer):
 
                 ## This gets put back to the summary report object
                 self.report({
-                    'IP-BGP': bgpip
+                    'IPBGP': bgpip
                 })
 
             except ValueError as e:
