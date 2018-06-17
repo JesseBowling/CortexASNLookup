@@ -2,22 +2,10 @@ This is an analyzer for [Cortex](https://github.com/CERT-BDF/Cortex/blob/master/
 
 To install, place these files in a new directory (such as "ASNLookup") under your Cortex Analyzers directory.
 
-Next, add a configuration stanza under the Cortex application.conf file, like this:
+Note that the requirements file is for Python3, thus you might need to:
 
 <pre>
-analyzer {
-  # Absolute path where you have pulled the Cortex-Analyzers repository.
-  path = "/analyzers/Cortex-Analyzers/analyzers"
-
-...
-
-  # Analyzer configuration
-  config {
-    # ASNLookup: this analyzer needs no additional config
-    ASNLookup {
-    }
-    
-...
-
+pip3 install -r requirements.txt
 </pre>
+
 Please report any issues or feature requests here!
